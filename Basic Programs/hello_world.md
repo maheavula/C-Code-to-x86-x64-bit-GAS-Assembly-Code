@@ -1,4 +1,10 @@
 ## Hello world program
+### Things learnt
+  - As function arguments store in reverse order in stack
+  - The prinf function's single argument which is hello world string is moved to stack
+  - If printf function would be like this `printf("this is %d", a);`, here second argument is moved like `mov rsi, eax`. you can see this in further programs.
+---
+
 
 | C Code                                    | Assembly Code                        | Comments                             |
 |-------------------------------------------|--------------------------------------|--------------------------------------|
