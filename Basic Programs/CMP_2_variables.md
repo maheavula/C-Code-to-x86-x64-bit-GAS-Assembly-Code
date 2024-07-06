@@ -1,8 +1,8 @@
 # Copmaring two variables after initializing at printf function argument
 ### Things Leant
   - How does x > y compared directly in printf function
-      - cmp     eax, DWORD PTR [rbp-8]
-      - setg al( if true al = 1 or al = 0)
+      - `cmp     eax, DWORD PTR [rbp-8]`
+      - `setg` is used to set the `al = 1` if 1st variable is greater than 2nd variable or otherwise `al = 0`
 ---
   
 | C Code | Assembly Code | Comments |
