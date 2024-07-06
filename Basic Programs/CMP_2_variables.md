@@ -3,6 +3,8 @@
   - How does x > y compared directly in printf function
       - `cmp     eax, DWORD PTR [rbp-8]`
       - `setg` is used to set the `al = 1` if 1st variable is greater than 2nd variable or otherwise `al = 0`
+      -  `mov     esi, eax` is second argument of printf function. which is answer of x > y.
+      -  `mov     edi, OFFSET FLAT:.LC0` is first arument moved into stack of printf function. which is string `%d`.
 ---
   
 | C Code | Assembly Code | Comments |
