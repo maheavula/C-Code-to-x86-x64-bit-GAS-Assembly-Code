@@ -2,7 +2,8 @@
 
 ### Things learnt
   - to assign something like `x += 10` it is just like adding value to the address of x. `add     DWORD PTR [rbp-4], 5`
-  - `sar     DWORD PTR [rbp-20], 2` shift arthmetic right operation
+  - `sar     DWORD PTR [rbp-20], 2` shift arthmetic right operation, `0000 0101` we need to forward 2bits the result is `0000 0001.(1)`
+  - `sal  DWORD PTR [rbp - 20], 2` shift arthmetic left operation, `0000 0101` we need to backward 2 bits the result is `0001 0100.(20)`
   - each intializing value is 4bytes like `sub 16` so when 4 values exeeds `sub rsp, 32` need to write in asm code, include rsp when it is 32 bytes.
 
 ---
