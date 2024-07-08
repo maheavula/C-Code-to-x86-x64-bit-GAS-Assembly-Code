@@ -1,7 +1,10 @@
 # Logical Not operator 
 
 ### Things learnt 
-  - tommorrow.
+  - Two comparison operation with logical operator which is `!(x > 3 && x < 10));`.
+  - while writing asm code from c code, after analysing answer from the c code we need to write according to the opposite conditions form of c, here it is like `x > 3` - `jle     .L2` and `x < 10` - `jle     .L3`.
+  - As we knew that if first condition is true in `logical OR` conditon then no need to check other condition directly we can say answer is `1`.
+  - And aslo for `logicaly AND` operation, we need to check both but if first condition fails to be true then directly the answer is `0`.
 
 ---
 
