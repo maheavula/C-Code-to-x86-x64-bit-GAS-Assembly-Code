@@ -12,7 +12,8 @@ There are different segments/sections in which data or code is stored. They are 
 ## Overview of Memory Sections
 Here is a general overview of how memory is laid out in Windows. This is extremely simplified.
 
-![Memory Sections Diagram](memory_sections.png)
+![WindowsMemoryLayoutRF](https://github.com/maheavula/C-Code-to-x86-x64-bit-GAS-Assembly-Code/assets/116332629/44327a89-5652-40ec-8315-30be1e75debe)
+
 
 > Important:
 > The diagram above shows the direction variables (and any named data, even structures) are put into or taken out of memory. The actual data is put into memory differently. This is why stack diagrams vary so much. You'll often see stack diagrams with the stack and heap growing towards each other or high memory addresses at the top. I will explain more later. The diagram I'm showing is the most relevant for reverse engineering. Low addresses being at the top is also the most realistic depiction.
