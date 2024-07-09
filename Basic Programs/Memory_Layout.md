@@ -42,4 +42,19 @@ When `main()` is called, a stack frame is created. This includes the local varia
 mov RAX, 15    ; RAX = 15
 call func      ; Call func. Same as func();
 mov RBX, 23    ; RBX = 23. This line is saved as the return address for the function call.
+```
+
+### Heap
+- **Description**: Used for dynamic allocation and is a little slower to access. Typically used for data that is dynamic (changing or unpredictable). When you add data to the heap it grows towards higher addresses.
+
+## Program Image
+- **Description**: This is the program/executable loaded into memory. On Windows, this is typically a Portable Executable (PE).
+## TEB and PEB
+- **TEB**: The Thread Environment Block stores information about the currently running thread(s).
+- **PEB**: The Process Environment Block stores information about the process and the loaded modules.
+## Endianness
+Given the value of 0xDEADBEEF, how should it be stored in memory?
+
+ - Big Endian: The most significant byte (far left) is stored first (0xDEADBEEF).
+ - Little Endian: The least significant byte (far right) is stored first (0xEFBEADDE).
 
