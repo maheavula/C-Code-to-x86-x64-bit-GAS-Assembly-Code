@@ -48,6 +48,7 @@ The goal of a compiler is to translate high-level code into Assembly, a language
 
 - **Array-like Behavior**:
   - These registers can be treated as arrays, enabling storage and manipulation of multiple values simultaneously.
+  -  For example, YMM# registers are 256-bit wide each and can hold 4 64-bit values or 8 32-bit values. Similarly, XMM# are 128-bit wide each and can hold 2 64-bit values or 4 32-bit values.
 
 ### Integer Registers
 
