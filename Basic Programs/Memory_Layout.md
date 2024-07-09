@@ -47,14 +47,28 @@ mov RBX, 23    ; RBX = 23. This line is saved as the return address for the func
 ### Heap
 - **Description**: Used for dynamic allocation and is a little slower to access. Typically used for data that is dynamic (changing or unpredictable). When you add data to the heap it grows towards higher addresses.
 
-## Program Image
+### Program Image
 - **Description**: This is the program/executable loaded into memory. On Windows, this is typically a Portable Executable (PE).
-## TEB and PEB
+### TEB and PEB
 - **TEB**: The Thread Environment Block stores information about the currently running thread(s).
 - **PEB**: The Process Environment Block stores information about the process and the loaded modules.
+  
 ## Endianness
 Given the value of 0xDEADBEEF, how should it be stored in memory?
 
  - Big Endian: The most significant byte (far left) is stored first (0xDEADBEEF).
  - Little Endian: The least significant byte (far right) is stored first (0xEFBEADDE).
 
+## Data Storage
+Data is put into its allocated space very simply: left to right, top to bottom. The first piece of data is at the lowest address.
+
+### Example
+For data 12345678 where each number is 2 bytes:
+
+ - 1 is at offset 0x0
+ - 2 is at offset 0x2
+ - 3 is at offset 0x4
+ - 4 is at offset 0x6
+### Recap
+Variable Allocation: On the stack, variables are allocated one on top of the other from higher addresses to lower addresses.
+Data Insertion: Data is put into the variables from lower to higher addresses.
