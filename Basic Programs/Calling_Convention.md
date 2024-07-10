@@ -29,3 +29,36 @@ You will usually see a double underscore prefix (`__`) before a calling conventi
 - The caller is responsible for allocating space for parameters for the callee. The caller must always allocate space for 4 parameters even if no parameters are passed.
 - The registers `RAX`, `RCX`, `RDX`, `R8`, `R9`, `R10`, `R11` are considered volatile and must be considered destroyed on function calls (unless otherwise safety-provable by analysis such as whole program optimization).
 - The registers `RBX`, `RBP`, `RDI`, `RSI`, `RSP`, `R12`, `R13`, `R14`, and `R15` are considered nonvolatile and must be saved and restored by a function that uses them.
+
+# Stack Access
+
+Data on the stack, such as local variables and function parameters, are often accessed with `RBP` or `RSP`. On x64, it's extremely common to see `RSP` used instead of `RBP` for parameters. Remember that the first four parameters, even though they are passed via registers, still have space reserved for them on the stack. This space is going to be 32 bytes (0x20), 8 bytes for each of the 4 registers.
+
+## Parameters
+
+### 1-4 Parameters
+
+Arguments will be pushed via their respective registers. The compiler will likely use `RSP+0x0` to `RSP+0x18` for other purposes.
+
+### More Than 4 Parameters
+
+The first four arguments are passed via registers, the rest are pushed onto the stack starting at offset `RSP+0x20`. This makes `RSP+0x20` the fifth argument and `RSP+0x28` the sixth.
+
+> **Note:** Arguments 1-4 are not pushed onto the stack by default, only the space for them is allocated. Sometimes when more than four arguments are passed, the first four arguments are put onto the stack by the callee. Be sure to look out for this.
+
+## Example
+
+Here is a very simple example where the numbers 1 to 8 are passed from one function to another function. Notice the order they are put in.
+
+```assembly
+MOV DWORD PTR SS:[RSP + 0x38], 0x8
+MOV DWORD PTR SS:[RSP + 0x30], 0x7
+MOV DWORD PTR SS:[RSP + 0x28], 0x6
+MOV DWORD PTR SS:[RSP + 0x20], 0x5
+MOV R9D, 0x4
+MOV R8D, 0x3
+MOV EDX, 0x2
+MOV ECX, 0x1
+CALL function
+```
+As you can see, the first few parameters are passed via ECX (because it doesn't need the full RCX register), EDX, R8D, and R9D as usual. It passes the rest of the parameters through RSP+0x20, RSP+0x28, etc.
