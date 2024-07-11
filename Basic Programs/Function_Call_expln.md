@@ -19,6 +19,9 @@ int main() {
 ### Analyzing The Function Call
 Let's take a look at a function call. In this case, the function being called is printf().
 
+![Function Call explained](https://github.com/maheavula/C-Code-to-x86-x64-bit-GAS-Assembly-Code/assets/116332629/9f679812-20ae-4255-acb7-aa02eb97a377)
+
+
 When this function is run, it prints the following to the console:
 
 `Printing with printf(). Here is some data: 4, 2, 1.000000, 000000000FFF7865, 1498, 87.002998, 99123.340000`
