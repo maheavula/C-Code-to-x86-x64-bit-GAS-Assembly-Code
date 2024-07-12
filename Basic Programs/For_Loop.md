@@ -2,6 +2,11 @@
 
 ### Things learnt
   - This is quite similar to While loop in syntax of ASM code but differ in C code, it is funny to learn Assembly language.
+  - To find difference between While and For loop
+  - `For Loop:` Initialization typically happens before the loop starts. This can be seen in the assembly code where the loop counter is set before the loop condition is checked.
+  - `While Loop:` Initialization of the loop counter can also happen outside the loop but is often less structured compared to for loops.
+  - `For Loop:` Typically has a clear initialization, condition check, and increment.
+  - `While Loop:` The condition check is the primary feature, and increments or other changes to the loop variable are more flexible in placement.
 
 | C Code | Assembly Code | Comments |
 |--------|----------------|----------|
