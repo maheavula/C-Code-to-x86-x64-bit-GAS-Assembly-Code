@@ -1,97 +1,31 @@
-# Programming Syntaxes: C, Java, Python
 
-# C, Java, and Python Syntax Comparison
+# Programming Language Syntax Comparison: C, Java, and Python
 
-## Variables
-| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
-|----------|---------------------------|------------------------------|-----------------------------|
-| Variable Declaration | `int a = 5;`     | `int a = 5;`                | `a = 5`                     |
-| Variable Initialization | `int a = 5;` | `int a = 5;`                | `a = 5`                     |
-
-## Data Types
-| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
-|----------|---------------------------|------------------------------|-----------------------------|
-| Integer  | `int a;`                  | `int a;`                     | `a = 5`                     |
-| Float    | `float b;`                | `float b;`                   | `b = 5.0`                   |
-
-## Constants
-| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
-|----------|---------------------------|------------------------------|-----------------------------|
-| Constant | `const int a = 10;`       | `final int a = 10;`          | `a = 10`                    |
-
-## Operators
-| Concept       | C Syntax               | Java Syntax                  | Python Syntax               |
-|---------------|------------------------|------------------------------|-----------------------------|
-| Arithmetic    | `a + b`                | `a + b`                      | `a + b`                     |
-| Comparison    | `a == b`               | `a == b`                     | `a == b`                    |
-
-## Booleans
-| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
-|----------|---------------------------|------------------------------|-----------------------------|
-| Boolean  | `int a = 1;` (0 or 1)     | `boolean a = true;`          | `a = True`                  |
-
-## If...Else
-| Concept     | C Syntax                      | Java Syntax                        | Python Syntax                 |
-|-------------|-------------------------------|------------------------------------|-------------------------------|
-| If Statement| `if (a > b) { /*...*/ }`      | `if (a > b) { /*...*/ }`           | `if a > b:`                   |
-| Else        | `else { /*...*/ }`            | `else { /*...*/ }`                 | `else:`                       |
-
-## Switch
-| Concept    | C Syntax                           | Java Syntax                              | Python Syntax                 |
-|------------|------------------------------------|------------------------------------------|-------------------------------|
-| Switch     | `switch (a) { case 1: /*...*/ }`   | `switch (a) { case 1: /*...*/ }`         | `# Python does not have switch`
-
-## Loops
-| Concept      | C Syntax                    | Java Syntax                      | Python Syntax                 |
-|--------------|-----------------------------|----------------------------------|-------------------------------|
-| While Loop   | `while (a < b) { /*...*/ }` | `while (a < b) { /*...*/ }`      | `while a < b:`                |
-| For Loop     | `for (i = 0; i < n; i++)`   | `for (int i = 0; i < n; i++)`    | `for i in range(n):`          |
-| Break/Continue| `break;` / `continue;`      | `break;` / `continue;`           | `break` / `continue`          |
-
-## Arrays
-| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
-|------------|-----------------------------------|--------------------------------------|-------------------------------|
-| Array      | `int arr[5];`                     | `int[] arr = new int[5];`            | `arr = [0]*5`                 |
-
-## Strings
-| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
-|------------|-----------------------------------|--------------------------------------|-------------------------------|
-| String     | `char str[] = "Hello";`           | `String str = "Hello";`              | `str = "Hello"`               |
-
-## User Input
-| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
-|------------|-----------------------------------|--------------------------------------|-------------------------------|
-| Input      | `scanf("%d", &a);`                | `Scanner sc = new Scanner(System.in); int a = sc.nextInt();` | `a = input()`                 |
-
-## Memory Address
-| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
-|------------|-----------------------------------|--------------------------------------|-------------------------------|
-| Address    | `&a`                              | N/A                                  | `id(a)`                       |
-
-## Pointers
-| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
-|------------|-----------------------------------|--------------------------------------|-------------------------------|
-| Pointer    | `int *p = &a;`                    | N/A                                  | N/A                           |
-
-## Functions
-| Concept           | C Syntax                                  | Java Syntax                              | Python Syntax                 |
-|-------------------|-------------------------------------------|------------------------------------------|-------------------------------|
-| Function Definition| `int func(int a) { return a; }`          | `int func(int a) { return a; }`          | `def func(a): return a`       |
-| Function Parameters| `int func(int a, int b)`                 | `int func(int a, int b)`                 | `def func(a, b)`              |
-| Scope             | Local and Global                          | Local and Global                          | Local and Global              |
-| Declaration       | `int func(int);`                          | Method signature in class                 | Function declaration          |
-| Recursion         | Supported                                 | Supported                                 | Supported                     |
-| Math Functions    | `#include <math.h>`                       | `import java.lang.Math;`                  | `import math`                 |
-
-## Files
-| Concept         | C Syntax                                    | Java Syntax                              | Python Syntax                 |
-|-----------------|---------------------------------------------|------------------------------------------|-------------------------------|
-| Create Files    | `FILE *fp = fopen("file.txt", "w");`        | `File file = new File("file.txt");`      | `file = open("file.txt", "w")`|
-| Write To Files  | `fprintf(fp, "Hello");`                     | `PrintWriter out = new PrintWriter(file); out.print("Hello");` | `file.write("Hello")`         |
-| Read Files      | `fscanf(fp, "%s", str);`                    | `Scanner sc = new Scanner(file); sc.next();` | `file.read()`                 |
-
-## Structures
-| Concept         | C Syntax                                    | Java Syntax                              | Python Syntax                 |
-|-----------------|---------------------------------------------|------------------------------------------|-------------------------------|
-| Structures      | `struct Person { int age; char name[50]; };`| `class Person { int age; String name; }` | `class Person: def __init__(self, age, name): self.age = age; self.name = name` |
+| Topic                 | C Syntax & Example                                                                                          | Java Syntax & Example                                                                                     | Python Syntax & Example                                                                                  |
+|-----------------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **Variables**         | `int a = 10;`<br>`float b = 20.5;`<br>`char c = 'A';`                                                       | `int a = 10;`<br>`float b = 20.5f;`<br>`char c = 'A';`                                                   | `a = 10`<br>`b = 20.5`<br>`c = 'A'`                                                                       |
+| **Data Types**        | `int, float, double, char`                                                                                  | `int, float, double, char`                                                                               | `int, float, str, bool`                                                                                   |
+| **Constants**         | `const int a = 10;`                                                                                        | `final int a = 10;`                                                                                      | `a = 10`<br>`import constant`<br>`CONSTANT_NAME = 10`                                                     |
+| **Operators**         | `+, -, *, /, %, ++, --`                                                                                    | `+, -, *, /, %, ++, --`                                                                                  | `+, -, *, /, %, //, **`                                                                                   |
+| **Booleans**          | `int a = 1;`<br>`int b = 0;`                                                                               | `boolean a = true;`<br>`boolean b = false;`                                                              | `a = True`<br>`b = False`                                                                                |
+| **If...Else**         | `if (a > b) { } else { }`                                                                                   | `if (a > b) { } else { }`                                                                                | `if a > b:`<br>`    pass`<br>`else:`<br>`    pass`                                                        |
+| **Switch**            | `switch(a) { case 1: break; default: break; }`                                                             | `switch(a) { case 1: break; default: break; }`                                                           | `match a:`<br>`    case 1:`<br>`        pass`<br>`    case _:`<br>`        pass`                         |
+| **While Loop**        | `while (a < 10) { }`                                                                                       | `while (a < 10) { }`                                                                                     | `while a < 10:`<br>`    pass`                                                                            |
+| **For Loop**          | `for (int i = 0; i < 10; i++) { }`                                                                         | `for (int i = 0; i < 10; i++) { }`                                                                       | `for i in range(10):`<br>`    pass`                                                                       |
+| **Break/Continue**    | `break;`<br>`continue;`                                                                                    | `break;`<br>`continue;`                                                                                  | `break`<br>`continue`                                                                                    |
+| **Arrays**            | `int arr[5] = {1, 2, 3, 4, 5};`                                                                            | `int[] arr = {1, 2, 3, 4, 5};`                                                                           | `arr = [1, 2, 3, 4, 5]`                                                                                  |
+| **Strings**           | `char str[] = "Hello";`                                                                                    | `String str = "Hello";`                                                                                  | `str = "Hello"`                                                                                           |
+| **User Input**        | `scanf("%d", &a);`                                                                                         | `Scanner sc = new Scanner(System.in);`<br>`a = sc.nextInt();`                                            | `a = input()`                                                                                            |
+| **Memory Address**    | `printf("%p", &a);`                                                                                        | N/A                                                                                                      | `print(id(a))`                                                                                           |
+| **Pointers**          | `int* p = &a;`                                                                                             | N/A                                                                                                      | `import ctypes`<br>`p = ctypes.pointer(ctypes.c_int(a))`                                                 |
+| **Functions**         | `int add(int a, int b) { return a + b; }`                                                                  | `int add(int a, int b) { return a + b; }`                                                                | `def add(a, b):`<br>`    return a + b`                                                                    |
+| **Function Parameters** | `void func(int a, float b)`                                                                              | `void func(int a, float b)`                                                                              | `def func(a, b):`                                                                                         |
+| **Scope**             | `int a = 10;`<br>`void func() { int a = 20; }`                                                             | `int a = 10;`<br>`void func() { int a = 20; }`                                                           | `a = 10`<br>`def func():`<br>`    a = 20`                                                                 |
+| **Function Declaration** | `int func(int a, int b);`                                                                               | `int func(int a, int b);`                                                                                | `def func(a, b):`<br>`    pass`                                                                           |
+| **Recursion**         | `int fact(int n) { if (n == 0) return 1; else return n * fact(n - 1); }`                                   | `int fact(int n) { if (n == 0) return 1; else return n * fact(n - 1); }`                                 | `def fact(n):`<br>`    if n == 0:`<br>`        return 1`<br>`    else:`<br>`        return n * fact(n - 1)` |
+| **Math Functions**    | `#include <math.h>`<br>`sqrt(a);`<br>`pow(a, b);`<br>`abs(a);`                                             | `Math.sqrt(a);`<br>`Math.pow(a, b);`<br>`Math.abs(a);`                                                   | `import math`<br>`math.sqrt(a)`<br>`math.pow(a, b)`<br>`abs(a)`                                           |
+| **Create Files**      | `FILE *f = fopen("file.txt", "w");`<br>`fprintf(f, "Hello");`<br>`fclose(f);`                              | `FileWriter fw = new FileWriter("file.txt");`<br>`fw.write("Hello");`<br>`fw.close();`                   | `with open("file.txt", "w") as f:`<br>`    f.write("Hello")`                                              |
+| **Write To Files**    | `FILE *f = fopen("file.txt", "a");`<br>`fprintf(f, "Hello");`<br>`fclose(f);`                              | `FileWriter fw = new FileWriter("file.txt", true);`<br>`fw.write("Hello");`<br>`fw.close();`             | `with open("file.txt", "a") as f:`<br>`    f.write("Hello")`                                              |
+| **Read Files**        | `FILE *f = fopen("file.txt", "r");`<br>`fscanf(f, "%s", str);`<br>`fclose(f);`                             | `FileReader fr = new FileReader("file.txt");`<br>`BufferedReader br = new BufferedReader(fr);`<br>`br.readLine();` | `with open("file.txt", "r") as f:`<br>`    content = f.read()`                                            |
+| **Structures**        | `struct Person {`<br>`    char name[50];`<br>`    int age;`<br>`};`<br>`struct Person p;`                  | `class Person {`<br>`    String name;`<br>`    int age;`<br>`}`<br>`Person p = new Person();`           | `class Person:`<br>`    def __init__(self, name, age):`<br>`        self.name = name`<br>`        self.age = age`<br>`p = Person("Name", 30)` |
 
