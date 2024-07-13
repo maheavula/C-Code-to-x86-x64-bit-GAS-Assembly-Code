@@ -1,16 +1,97 @@
 # Programming Syntaxes: C, Java, Python
 
-| Topic                  | C Syntax                                                                                 | Java Syntax                                                                                             | Python Syntax                                       |
-|------------------------|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-| **Variable Declaration** | `int x = 10;`                                                                            | `int x = 10;`                                                                                            | `x = 10`                                            |
-| **Conditional Statement** | `if (x > 0) { ... } else { ... }`                                                        | `if (x > 0) { ... } else { ... }`                                                                        | `if x > 0:\n    ...\nelse:\n    ...`                |
-| **Loop**                | `for (int i = 0; i < 10; i++) { ... }`                                                   | `for (int i = 0; i < 10; i++) { ... }`                                                                   | `for i in range(10):\n    ...`                      |
-| **Function Definition** | `int add(int a, int b) { return a + b; }`                                                | `int add(int a, int b) { return a + b; }`                                                                | `def add(a, b):\n    return a + b`                  |
-| **Array Declaration**   | `int arr[5];`                                                                            | `int[] arr = new int[5];`                                                                                | `arr = [0] * 5`                                     |
-| **Class Definition**    | `typedef struct { int x; int y; } Point;`                                                | `class Point { int x; int y; }`                                                                          | `class Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y`    |
-| **Exception Handling**  | `#include <setjmp.h>\njmp_buf buf;\nif (setjmp(buf)) { ... } else { ... }`               | `try { ... } catch (Exception e) { ... }`                                                                | `try:\n    ...\nexcept Exception as e:\n    ...`    |
-| **File I/O**            | `FILE *file = fopen("file.txt", "r");\nchar line[100];\nfgets(line, 100, file);`         | `BufferedReader reader = new BufferedReader(new FileReader("file.txt"));\nString line = reader.readLine();` | `with open("file.txt", "r") as file:\n    line = file.readline()` |
-| **Inheritance**         | `struct Point { int x, y; };\nstruct Point3D { struct Point p; int z; };`                | `class Point { int x, y; }\nclass Point3D extends Point { int z; }`                                      | `class Point:\n    ...\nclass Point3D(Point):\n    ...`          |
-| **Interface/Protocol**  | `typedef struct { void (*print)(void *self); } Printable;`                               | `interface Printable { void print(); }`                                                                  | `class Printable:\n    def print(self):\n        raise NotImplementedError` |
-| **Multithreading**      | `#include <pthread.h>\nvoid *thread_func(void *arg) { ... }\npthread_t thread;\npthread_create(&thread, NULL, thread_func, NULL);` | `class MyThread extends Thread { public void run() { ... } }\nThread t = new MyThread();\nt.start();`     | `import threading\ndef thread_func():\n    ...\nthread = threading.Thread(target=thread_func)\nthread.start()` |
+# C, Java, and Python Syntax Comparison
+
+## Variables
+| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
+|----------|---------------------------|------------------------------|-----------------------------|
+| Variable Declaration | `int a = 5;`     | `int a = 5;`                | `a = 5`                     |
+| Variable Initialization | `int a = 5;` | `int a = 5;`                | `a = 5`                     |
+
+## Data Types
+| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
+|----------|---------------------------|------------------------------|-----------------------------|
+| Integer  | `int a;`                  | `int a;`                     | `a = 5`                     |
+| Float    | `float b;`                | `float b;`                   | `b = 5.0`                   |
+
+## Constants
+| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
+|----------|---------------------------|------------------------------|-----------------------------|
+| Constant | `const int a = 10;`       | `final int a = 10;`          | `a = 10`                    |
+
+## Operators
+| Concept       | C Syntax               | Java Syntax                  | Python Syntax               |
+|---------------|------------------------|------------------------------|-----------------------------|
+| Arithmetic    | `a + b`                | `a + b`                      | `a + b`                     |
+| Comparison    | `a == b`               | `a == b`                     | `a == b`                    |
+
+## Booleans
+| Concept  | C Syntax                  | Java Syntax                  | Python Syntax               |
+|----------|---------------------------|------------------------------|-----------------------------|
+| Boolean  | `int a = 1;` (0 or 1)     | `boolean a = true;`          | `a = True`                  |
+
+## If...Else
+| Concept     | C Syntax                      | Java Syntax                        | Python Syntax                 |
+|-------------|-------------------------------|------------------------------------|-------------------------------|
+| If Statement| `if (a > b) { /*...*/ }`      | `if (a > b) { /*...*/ }`           | `if a > b:`                   |
+| Else        | `else { /*...*/ }`            | `else { /*...*/ }`                 | `else:`                       |
+
+## Switch
+| Concept    | C Syntax                           | Java Syntax                              | Python Syntax                 |
+|------------|------------------------------------|------------------------------------------|-------------------------------|
+| Switch     | `switch (a) { case 1: /*...*/ }`   | `switch (a) { case 1: /*...*/ }`         | `# Python does not have switch`
+
+## Loops
+| Concept      | C Syntax                    | Java Syntax                      | Python Syntax                 |
+|--------------|-----------------------------|----------------------------------|-------------------------------|
+| While Loop   | `while (a < b) { /*...*/ }` | `while (a < b) { /*...*/ }`      | `while a < b:`                |
+| For Loop     | `for (i = 0; i < n; i++)`   | `for (int i = 0; i < n; i++)`    | `for i in range(n):`          |
+| Break/Continue| `break;` / `continue;`      | `break;` / `continue;`           | `break` / `continue`          |
+
+## Arrays
+| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
+|------------|-----------------------------------|--------------------------------------|-------------------------------|
+| Array      | `int arr[5];`                     | `int[] arr = new int[5];`            | `arr = [0]*5`                 |
+
+## Strings
+| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
+|------------|-----------------------------------|--------------------------------------|-------------------------------|
+| String     | `char str[] = "Hello";`           | `String str = "Hello";`              | `str = "Hello"`               |
+
+## User Input
+| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
+|------------|-----------------------------------|--------------------------------------|-------------------------------|
+| Input      | `scanf("%d", &a);`                | `Scanner sc = new Scanner(System.in); int a = sc.nextInt();` | `a = input()`                 |
+
+## Memory Address
+| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
+|------------|-----------------------------------|--------------------------------------|-------------------------------|
+| Address    | `&a`                              | N/A                                  | `id(a)`                       |
+
+## Pointers
+| Concept    | C Syntax                          | Java Syntax                          | Python Syntax                 |
+|------------|-----------------------------------|--------------------------------------|-------------------------------|
+| Pointer    | `int *p = &a;`                    | N/A                                  | N/A                           |
+
+## Functions
+| Concept           | C Syntax                                  | Java Syntax                              | Python Syntax                 |
+|-------------------|-------------------------------------------|------------------------------------------|-------------------------------|
+| Function Definition| `int func(int a) { return a; }`          | `int func(int a) { return a; }`          | `def func(a): return a`       |
+| Function Parameters| `int func(int a, int b)`                 | `int func(int a, int b)`                 | `def func(a, b)`              |
+| Scope             | Local and Global                          | Local and Global                          | Local and Global              |
+| Declaration       | `int func(int);`                          | Method signature in class                 | Function declaration          |
+| Recursion         | Supported                                 | Supported                                 | Supported                     |
+| Math Functions    | `#include <math.h>`                       | `import java.lang.Math;`                  | `import math`                 |
+
+## Files
+| Concept         | C Syntax                                    | Java Syntax                              | Python Syntax                 |
+|-----------------|---------------------------------------------|------------------------------------------|-------------------------------|
+| Create Files    | `FILE *fp = fopen("file.txt", "w");`        | `File file = new File("file.txt");`      | `file = open("file.txt", "w")`|
+| Write To Files  | `fprintf(fp, "Hello");`                     | `PrintWriter out = new PrintWriter(file); out.print("Hello");` | `file.write("Hello")`         |
+| Read Files      | `fscanf(fp, "%s", str);`                    | `Scanner sc = new Scanner(file); sc.next();` | `file.read()`                 |
+
+## Structures
+| Concept         | C Syntax                                    | Java Syntax                              | Python Syntax                 |
+|-----------------|---------------------------------------------|------------------------------------------|-------------------------------|
+| Structures      | `struct Person { int age; char name[50]; };`| `class Person { int age; String name; }` | `class Person: def __init__(self, age, name): self.age = age; self.name = name` |
 
